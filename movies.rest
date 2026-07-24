@@ -1,0 +1,165 @@
+### =====================
+### LOCAL
+### =====================
+
+### Get all movies
+GET http://localhost:3000/movies
+
+### Get movie by id
+GET http://localhost:3000/movies/PUT_A_REAL_MOVIE_ID_HERE
+
+### Create a movie (valid)
+POST http://localhost:3000/movies
+content-type: application/json
+
+{
+  "title": "Glass Horizon",
+  "director": "Rita Alvarez",
+  "releaseYear": 2022,
+  "genre": "Drama",
+  "rating": 8.1,
+  "runtimeMinutes": 111,
+  "synopsis": "A glassblower rebuilds her life after losing her studio in a fire."
+}
+
+### Create a movie (INVALID - missing fields, should return 400)
+POST http://localhost:3000/movies
+content-type: application/json
+
+{
+  "title": "Missing Fields Movie"
+}
+
+### Update a movie (valid)
+PUT http://localhost:3000/movies/PUT_A_REAL_MOVIE_ID_HERE
+content-type: application/json
+
+{
+  "title": "Glass Horizon",
+  "director": "Rita Alvarez",
+  "releaseYear": 2022,
+  "genre": "Drama",
+  "rating": 8.4,
+  "runtimeMinutes": 111,
+  "synopsis": "Updated synopsis after re-edit."
+}
+
+### Delete a movie
+DELETE http://localhost:3000/movies/PUT_A_REAL_MOVIE_ID_HERE
+
+### Get all reviews
+GET http://localhost:3000/reviews
+
+### Get review by id
+GET http://localhost:3000/reviews/PUT_A_REAL_REVIEW_ID_HERE
+
+### Create a review (valid)
+POST http://localhost:3000/reviews
+content-type: application/json
+
+{
+  "movieId": "PUT_A_REAL_MOVIE_ID_HERE",
+  "reviewerName": "Taylor Brooks",
+  "rating": 8,
+  "comment": "Beautifully shot, really stuck with me.",
+  "datePosted": "05/10/2024"
+}
+
+### Create a review (INVALID - bad movieId, should return 400)
+POST http://localhost:3000/reviews
+content-type: application/json
+
+{
+  "movieId": "not-a-valid-id",
+  "reviewerName": "Taylor Brooks",
+  "rating": 8,
+  "comment": "test",
+  "datePosted": "05/10/2024"
+}
+
+### Update a review
+PUT http://localhost:3000/reviews/PUT_A_REAL_REVIEW_ID_HERE
+content-type: application/json
+
+{
+  "movieId": "PUT_A_REAL_MOVIE_ID_HERE",
+  "reviewerName": "Taylor Brooks",
+  "rating": 9,
+  "comment": "Updated my opinion after a rewatch - even better.",
+  "datePosted": "05/12/2024"
+}
+
+### Delete a review
+DELETE http://localhost:3000/reviews/PUT_A_REAL_REVIEW_ID_HERE
+
+
+### =====================
+### PRODUCTION (Render)
+### =====================
+
+### Get all movies
+GET https://YOUR-APP-NAME.onrender.com/movies
+
+### Get movie by id
+GET https://YOUR-APP-NAME.onrender.com/movies/PUT_A_REAL_MOVIE_ID_HERE
+
+### Create a movie
+POST https://YOUR-APP-NAME.onrender.com/movies
+content-type: application/json
+
+{
+  "title": "Northbound",
+  "director": "Chris Whitfield",
+  "releaseYear": 2020,
+  "genre": "Adventure",
+  "rating": 7.8,
+  "runtimeMinutes": 122,
+  "synopsis": "Three friends hike the length of a disappearing glacier trail."
+}
+
+### Update a movie
+PUT https://YOUR-APP-NAME.onrender.com/movies/PUT_A_REAL_MOVIE_ID_HERE
+content-type: application/json
+
+{
+  "title": "Northbound",
+  "director": "Chris Whitfield",
+  "releaseYear": 2020,
+  "genre": "Adventure",
+  "rating": 8.0,
+  "runtimeMinutes": 122,
+  "synopsis": "Updated synopsis text."
+}
+
+### Delete a movie
+DELETE https://YOUR-APP-NAME.onrender.com/movies/PUT_A_REAL_MOVIE_ID_HERE
+
+### Get all reviews
+GET https://YOUR-APP-NAME.onrender.com/reviews
+
+### Create a review
+POST https://YOUR-APP-NAME.onrender.com/reviews
+content-type: application/json
+
+{
+  "movieId": "PUT_A_REAL_MOVIE_ID_HERE",
+  "reviewerName": "Morgan Reyes",
+  "rating": 7,
+  "comment": "Solid but a bit predictable.",
+  "datePosted": "06/01/2024"
+}
+
+### Update a review
+PUT https://YOUR-APP-NAME.onrender.com/reviews/PUT_A_REAL_REVIEW_ID_HERE
+content-type: application/json
+
+{
+  "movieId": "PUT_A_REAL_MOVIE_ID_HERE",
+  "reviewerName": "Morgan Reyes",
+  "rating": 8,
+  "comment": "Changed my mind - this holds up on a rewatch.",
+  "datePosted": "06/03/2024"
+}
+
+### Delete a review
+DELETE https://YOUR-APP-NAME.onrender.com/reviews/PUT_A_REAL_REVIEW_ID_HERE
