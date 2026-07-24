@@ -7,7 +7,7 @@ const doc = {
       'CSE 341 Project 2 - CRUD API for movies and their reviews, backed by MongoDB, with validation and centralized error handling.'
   },
   // Replace this with your actual Render domain once deployed (no https:// prefix).
-  host: 'YOUR-APP-NAME.onrender.com',
+  host: 'movies-api-vw64.onrender.com',
   schemes: ['https']
 };
 
