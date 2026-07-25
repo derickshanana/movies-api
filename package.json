@@ -13,16 +13,16 @@
     "swagger": "node swagger.js"
   },
   "dependencies": {
-   "dotenv": "^16.6.1",
-  "express": "^4.22.2",
+    "dotenv": "^16.6.1",
+    "express": "^4.22.2",
     "express-validator": "^7.1.0",
     "mongodb": "^6.7.0",
     "swagger-autogen": "^2.23.7",
     "swagger-ui-express": "^5.0.1"
   },
-"devDependencies": {
-  "eslint": "^10.7.0",
-  "nodemon": "^3.0.1",
-  "prettier": "^3.2.5"
-}
+  "devDependencies": {
+    "eslint": "^10.7.0",
+    "nodemon": "^3.0.1",
+    "prettier": "^3.2.5"
+  }
 }

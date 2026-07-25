@@ -11,9 +11,9 @@ const doc = {
   schemes: ['https']
 };
 
-const outputFile = './swagger-output.json';
+const outputFile = './swagger.json';
 const endpointsFiles = ['./routes/index.js'];
 
 // Run with: node swagger.js
-// This generates/updates swagger-output.json based on your routes.
+// This generates/updates swagger.json based on your routes.
 swaggerAutogen(outputFile, endpointsFiles, doc);
