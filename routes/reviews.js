@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const reviewsController = require('../controllers/reviews');
 const { reviewValidationRules, validateReview } = require('../validators/reviewValidator');
-const isLoggedIn = require('../middleware/isLoggedIn');
+const { isAuthenticated } = require('../middleware/authenticate');
 
 // GET all reviews - public
 router.get('/', reviewsController.getAllReviews);
@@ -10,21 +10,25 @@ router.get('/', reviewsController.getAllReviews);
 // GET a single review by id - public
 router.get('/:id', reviewsController.getSingleReview);
 
-// POST - create a new review
-// #swagger.description = 'Requires authentication (GitHub OAuth login).'
+// POST - create a new review - requires login
 router.post(
     '/',
-    isLoggedIn,
+    isAuthenticated,
     reviewValidationRules,
     validateReview,
     reviewsController.createReview
 );
 
-// PUT - update a review by id - public (validated)
-router.put('/:id', reviewValidationRules, validateReview, reviewsController.updateReview);
+// PUT - update a review by id - requires login
+router.put(
+    '/:id',
+    isAuthenticated,
+    reviewValidationRules,
+    validateReview,
+    reviewsController.updateReview
+);
 
-// DELETE a review by id
-// #swagger.description = 'Requires authentication (GitHub OAuth login).'
-router.delete('/:id', isLoggedIn, reviewsController.deleteReview);
+// DELETE a review by id - requires login
+router.delete('/:id', isAuthenticated, reviewsController.deleteReview);
 
 module.exports = router;
