@@ -98,13 +98,13 @@ DELETE http://localhost:3000/reviews/PUT_A_REAL_REVIEW_ID_HERE
 ### =====================
 
 ### Get all movies
-GET https://YOUR-APP-NAME.onrender.com/movies
+GET https://movies-api-vw64.onrender.com/movies
 
 ### Get movie by id
-GET https://YOUR-APP-NAME.onrender.com/movies/PUT_A_REAL_MOVIE_ID_HERE
+GET https://movies-api-vw64.onrender.com/movies/PUT_A_REAL_MOVIE_ID_HERE
 
 ### Create a movie
-POST https://YOUR-APP-NAME.onrender.com/movies
+POST https://movies-api-vw64.onrender.com/movies
 content-type: application/json
 
 {
@@ -118,7 +118,7 @@ content-type: application/json
 }
 
 ### Update a movie
-PUT https://YOUR-APP-NAME.onrender.com/movies/PUT_A_REAL_MOVIE_ID_HERE
+PUT https://movies-api-vw64.onrender.com/movies/PUT_A_REAL_MOVIE_ID_HERE
 content-type: application/json
 
 {
@@ -132,13 +132,13 @@ content-type: application/json
 }
 
 ### Delete a movie
-DELETE https://YOUR-APP-NAME.onrender.com/movies/PUT_A_REAL_MOVIE_ID_HERE
+DELETE https://movies-api-vw64.onrender.com/movies/PUT_A_REAL_MOVIE_ID_HERE
 
 ### Get all reviews
-GET https://YOUR-APP-NAME.onrender.com/reviews
+GET https://movies-api-vw64.onrender.com/reviews
 
 ### Create a review
-POST https://YOUR-APP-NAME.onrender.com/reviews
+POST https://movies-api-vw64.onrender.com/reviews
 content-type: application/json
 
 {
@@ -150,7 +150,7 @@ content-type: application/json
 }
 
 ### Update a review
-PUT https://YOUR-APP-NAME.onrender.com/reviews/PUT_A_REAL_REVIEW_ID_HERE
+PUT https://movies-api-vw64.onrender.com/reviews/PUT_A_REAL_REVIEW_ID_HERE
 content-type: application/json
 
 {
@@ -162,4 +162,4 @@ content-type: application/json
 }
 
 ### Delete a review
-DELETE https://YOUR-APP-NAME.onrender.com/reviews/PUT_A_REAL_REVIEW_ID_HERE
+DELETE https://movies-api-vw64.onrender.com/reviews/PUT_A_REAL_REVIEW_ID_HERE
