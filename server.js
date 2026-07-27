@@ -1,6 +1,8 @@
 const express = require('express');
 const dotenv = require('dotenv');
 dotenv.config();
+const session = require('express-session');
+const passport = require('./config/passport');
 
 const app = express();
 const db = require('./db/connect');
@@ -8,12 +10,21 @@ const errorHandler = require('./middleware/errorHandler');
 
 app.use(express.json());
 
-// Routes
+// Sessions must be set up before passport.session()
+app.use(
+  session({
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: false
+  })
+);
+
+app.use(passport.initialize());
+app.use(passport.session());
+
 app.use('/', require('./routes'));
 
-// Centralized error handling middleware.
-// This MUST be registered after all routes so it can catch errors
-// passed via next(err) from anywhere in the app.
+// Centralized error handling middleware - must be registered last
 app.use(errorHandler);
 
 const port = process.env.PORT || 3000;
