@@ -142,7 +142,7 @@ POST https://movies-api-vw64.onrender.com/reviews
 content-type: application/json
 
 {
-  "movieId": "PUT_A_REAL_MOVIE_ID_HERE",
+  "movieId": "6a63862ec70c5b06d6ee945e",
   "reviewerName": "Morgan Reyes",
   "rating": 7,
   "comment": "Solid but a bit predictable.",
